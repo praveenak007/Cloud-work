@@ -24,8 +24,11 @@ Route Tables:
         A Route Table is a set of rules (routes) that determines where network traffic from your subnet or gateway is directed.
 
 Internet Gateway (IGW)
+
 NAT(Network Address Translation) Gateway
+
 VPC Flow Logs
+
         VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC.
 
 Learning Outcome :
