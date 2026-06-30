@@ -1,25 +1,25 @@
 Cloud Computing Day 1
 
-Topics Covered
+Topics Covered :
 
 AWS Console
 
-Introduction to AWS
+Introduction to AWS:
 Exploring the AWS Management Console
 Understanding AWS Services
 IAM (Identity and Access Management)
 
-Introduction to IAM
+Introduction to IAM:
 IAM User Creation
 Managing User Permissions
 Security Best Practices
-AWS Dashboard
 
+AWS Dashboard :
 Navigating the AWS Dashboard
 Understanding the AWS Home Page
 Accessing AWS Services
-Learning Outcome
 
+Learning Outcome :
 Understood the basics of Amazon Web Services (AWS).
 Learned how to navigate the AWS Management Console.
 Created and managed IAM users.
