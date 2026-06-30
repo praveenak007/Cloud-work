@@ -16,11 +16,13 @@ Amazon VPC (Virtual Private Cloud)
 
 Introduction to VPC:
 Creating a VPC
-Public and Private Subnets
-        Public subnets have a direct route to the internet via an Internet Gateway, making them ideal for web servers, while private subnets have no direct internet access, 
-        keeping isolated resources like databases secure.
-Route Tables
+Public and Private Subnets:
+
+        Public subnets have a direct route to the internet via an Internet Gateway, making them ideal for web servers, while private subnets have no direct internet access, keeping isolated resources like databases secure.
+        
+Route Tables:
         A Route Table is a set of rules (routes) that determines where network traffic from your subnet or gateway is directed.
+
 Internet Gateway (IGW)
 NAT(Network Address Translation) Gateway
 VPC Flow Logs
