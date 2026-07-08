@@ -1,0 +1,238 @@
+# Deploying a Three-Tier Architecture Application on AWS EKS using Jenkins, Argo CD, Prometheus & Grafana
+
+## Project Overview
+
+This project demonstrates how to deploy a **Three-Tier Architecture Application** on **Amazon EKS (Elastic Kubernetes Service)** using modern DevOps tools such as **Jenkins**, **Argo CD**, **Prometheus**, and **Grafana**. The goal is to automate the complete software delivery process, monitor the application, and ensure high availability in a Kubernetes environment.
+
+---
+
+# Objective
+
+* Deploy a containerized application on AWS EKS.
+* Automate the CI/CD pipeline.
+* Implement GitOps for Kubernetes deployments.
+* Monitor application and cluster health.
+* Visualize performance metrics through dashboards.
+
+---
+
+# What is a Three-Tier Architecture?
+
+A Three-Tier Architecture separates an application into three independent layers:
+
+### 1. Presentation Tier (Frontend)
+
+* User Interface
+* Receives user requests
+* Displays application data
+* Examples: React, Angular, HTML/CSS
+
+---
+
+### 2. Application Tier (Backend)
+
+* Contains business logic
+* Processes requests from the frontend
+* Communicates with the database
+* Examples: Spring Boot, Node.js, Python Flask
+
+---
+
+### 3. Database Tier
+
+* Stores application data
+* Handles queries and transactions
+* Examples: MySQL, PostgreSQL, MongoDB
+
+---
+
+# Overall Workflow
+
+```text
+Developer
+      │
+      ▼
+GitHub Repository
+      │
+      ▼
+Jenkins (CI)
+      │
+      ▼
+Build Docker Image
+      │
+      ▼
+Push Image to Docker Hub / Amazon ECR
+      │
+      ▼
+Update Kubernetes Manifest
+      │
+      ▼
+Argo CD (GitOps)
+      │
+      ▼
+Amazon EKS Cluster
+      │
+      ▼
+Pods & Services Running
+      │
+      ▼
+Prometheus Collects Metrics
+      │
+      ▼
+Grafana Dashboard
+```
+
+---
+
+# Services Used
+
+## Amazon EKS
+
+Managed Kubernetes service that runs and manages Kubernetes clusters without maintaining the control plane.
+
+**Purpose**
+
+* Deploy applications
+* Manage Pods
+* Handle scaling and availability
+
+---
+
+## Jenkins
+
+An automation server used for Continuous Integration.
+
+**Responsibilities**
+
+* Pull source code from GitHub
+* Build the application
+* Execute tests
+* Build Docker images
+* Push Docker images to a registry
+
+---
+
+## Docker
+
+Packages the application and its dependencies into containers.
+
+**Purpose**
+
+* Consistent deployment
+* Portable applications
+* Lightweight execution
+
+---
+
+## Docker Hub / Amazon ECR
+
+Container image registry used to store Docker images.
+
+---
+
+## Argo CD
+
+A GitOps Continuous Delivery tool for Kubernetes.
+
+**Responsibilities**
+
+* Watches the Git repository
+* Detects manifest changes
+* Automatically synchronizes Kubernetes clusters with Git
+
+---
+
+## Amazon EKS
+
+Deploys:
+
+* Pods
+* Deployments
+* Services
+* Ingress
+* ConfigMaps
+* Secrets
+
+---
+
+## Prometheus
+
+An open-source monitoring system.
+
+**Collects**
+
+* CPU Usage
+* Memory Usage
+* Pod Health
+* Network Metrics
+* Node Metrics
+
+---
+
+## Grafana
+
+Visualization platform.
+
+Creates dashboards for:
+
+* CPU Utilization
+* Memory Consumption
+* Pod Status
+* Cluster Health
+* Network Traffic
+
+---
+
+# CI Pipeline (Jenkins)
+
+1. Developer pushes code to GitHub.
+2. GitHub webhook triggers Jenkins.
+3. Jenkins checks out the source code.
+4. Application is built.
+5. Tests are executed.
+6. Docker image is created.
+7. Image is pushed to Docker Hub or Amazon ECR.
+
+---
+
+# CD Pipeline (Argo CD)
+
+1. Kubernetes manifests are updated in Git.
+2. Argo CD detects repository changes.
+3. Argo CD synchronizes with the EKS cluster.
+4. Kubernetes pulls the latest Docker image.
+5. Pods are updated using a rolling deployment.
+
+---
+
+# Monitoring Flow
+
+```text
+Application
+      │
+      ▼
+Prometheus
+      │
+      ▼
+Stores Metrics
+      │
+      ▼
+Grafana
+      │
+      ▼
+Dashboards & Alerts
+```
+
+---
+
+# Benefits
+
+* Automated software delivery.
+* Consistent deployments.
+* Kubernetes orchestration.
+* High availability.
+* Git-based deployment management.
+* Centralized monitoring.
+* Easy troubleshooting.
+* Scalable infrastructure.
+
